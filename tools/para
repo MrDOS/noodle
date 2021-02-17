@@ -1,0 +1,18 @@
+#! /usr/bin/env -S awk -f
+
+# Extract the first paragraph from a Markdown document.
+
+# Don't output anything until after we hit a non-blank, non-header line. (This
+# assumes headers starting with “#” rather than underlining.)
+/^[^#]/ {
+    printing = 1
+}
+
+# Bail once we hit the blank line ending the first paragraph.
+printing && $0 == "" {
+    exit
+}
+
+printing {
+    print
+}

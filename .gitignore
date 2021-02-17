@@ -1,0 +1,9 @@
+# Ephemeral source.
+commands/description.txt
+
+# Development configuration files.
+*.yaml
+*.yml
+
+# Build artifacts.
+bin/
